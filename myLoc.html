@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wherever you go, there you are</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+
+    <section id="part1" aria-labelledby="part1-title">
+        <h2 id="part1-title">Завдання 1. Поточне місцезнаходження та відстань</h2>
+
+        <div class="readout">
+            <div id="location">Тут з’являться ваші координати.</div>
+            <div id="accuracy" class="muted"></div>
+        </div>
+
+        <p id="error" class="error" role="alert" hidden></p>
+
+        <div class="row">
+            <div id="distance" class="readout-line">Тут з’явиться відстань до обраного місця.</div>
+        </div>
+
+        <div class="controls">
+            <label for="place">Рахувати відстань до</label>
+            <select id="place">
+                <option value="college">Коледж</option>
+                <option value="rada">Верховна Рада</option>
+            </select>
+            <button type="button" id="locate" class="secondary">Визначити ще раз</button>
+        </div>
+    </section>
+
+    <section id="part2" aria-labelledby="part2-title">
+        <h2 id="part2-title">Завдання 2. Відстеження у режимі реального часу</h2>
+        <p class="lead">
+
+        <div class="controls">
+            <button type="button" id="watch">Watch me</button>
+            <button type="button" id="clearWatch" class="secondary">Clear watch</button>
+            <span id="watchStatus" class="status" aria-live="polite">Відстеження вимкнено.</span>
+        </div>
+    </section>
+
+    <section id="individual" aria-labelledby="ind-title">
+        <h2 id="ind-title">Індивідуальне завдання. Карта з маркерами</h2>
+
+        <div class="map-layout">
+            <div class="map-col">
+                <div id="map" class="map" role="region" aria-label="Карта"></div>
+                <label class="check">
+                    <input type="checkbox" id="follow" checked>
+                    Переміщувати карту за моєю позицією
+                </label>
+            </div>
+
+            <aside class="side">
+                <form id="destForm" class="dest-form" novalidate>
+                    <h3>Пункт призначення</h3>
+                    <div class="field">
+                        <label for="destLat">Широта</label>
+                        <input type="text" id="destLat" inputmode="decimal" placeholder="48.94321" autocomplete="off">
+                    </div>
+                    <div class="field">
+                        <label for="destLng">Довгота</label>
+                        <input type="text" id="destLng" inputmode="decimal" placeholder="24.73380" autocomplete="off">
+                    </div>
+                    <div class="controls">
+                        <button type="submit">Поставити маркер</button>
+                        <button type="button" id="goDest" class="secondary">Показати на карті</button>
+                    </div>
+                    <p id="destInfo" class="muted" aria-live="polite">Пункт призначення ще не задано.</p>
+                </form>
+
+                <div class="history">
+                    <div class="history-head">
+                        <h3>Останні позиції</h3>
+                        <button type="button" id="clearHistory" class="link">Очистити</button>
+                    </div>
+                    <ol id="historyList" class="history-list">
+                        <li class="muted">Поки що порожньо.</li>
+                    </ol>
+                    <p class="muted small">Історія та пункт призначення зберігаються в localStorage браузера.</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+</main>
+
+<footer class="page-foot">
+    <p>Карта: © учасники OpenStreetMap, бібліотека Leaflet.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="myLoc.js"></script>
+</body>
+</html>

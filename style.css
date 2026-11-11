@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+section { margin-bottom: 2rem; }
+
+nav a { margin-right: 1rem; }
+
+.controls { margin: .5rem 0; }
+
+.error { color: #b00020; }
+.error[hidden] { display: none; }
+
+.muted { color: #666; }
+.small { font-size: .85rem; }
+
+.map { height: 28rem; border: 1px solid #999; }
+
+.map-layout { display: flex; flex-wrap: wrap; gap: 1rem; }
+.map-col { flex: 2 1 22rem; }
+.side { flex: 1 1 15rem; }
+
+.field { margin-bottom: .5rem; }
+.field input { width: 100%; }
+
+.history-head { display: flex; justify-content: space-between; align-items: baseline; }
+.history-list { font-size: .85rem; padding-left: 1.25rem; }
+.history-list .time { display: block; color: #666; }
+
+button.link { background: none; border: 0; padding: 0; color: #0645ad; text-decoration: underline; cursor: pointer; }
+
+/* маркер пункту призначення */
+.dest-pin span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-radius: 50% 50% 50% 0;
+    background: #d32f2f;
+    transform: rotate(-45deg);
+}
